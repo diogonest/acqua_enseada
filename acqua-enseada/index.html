@@ -411,41 +411,102 @@ de frente para o mar</h2>				</div>
 				<div class="elementor-element elementor-element-60d2710 elementor-widget elementor-widget-heading" data-id="60d2710" data-element_type="widget" data-widget_type="heading.default">
 					<h2 class="elementor-heading-title elementor-size-default">SAiba mais sobre<br>os nossos<b style="color: #aac4ce"> empreendimentos</b> </h2>				</div>
 				<div class="elementor-element elementor-element-3ea4e7d elementor-button-align-center elementor-widget elementor-widget-form" data-id="3ea4e7d" data-element_type="widget" data-settings="{&quot;step_next_label&quot;:&quot;Next&quot;,&quot;step_previous_label&quot;:&quot;Previous&quot;,&quot;button_width&quot;:&quot;100&quot;,&quot;step_type&quot;:&quot;number_text&quot;,&quot;step_icon_shape&quot;:&quot;circle&quot;}" data-widget_type="form.default">
-							<form class="elementor-form" method="post" name="Formulário Acqua Enseada">
+							<form class="elementor-form" method="post" name="Formulário Acqua Enseada" id="acqua-form">
 			<input type="hidden" name="post_id" value="30"/>
 			<input type="hidden" name="form_id" value="3ea4e7d"/>
 			<input type="hidden" name="referer_title" value="Apartamentos Frente ao Mar – Enseada Azul, Guarapari" />
 
-							<input type="hidden" name="queried_id" value="30"/>
+						<input type="hidden" name="queried_id" value="30"/>
 			
 			<div class="elementor-form-fields-wrapper elementor-labels-above">
-								<div class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-name elementor-col-100 elementor-field-required">
-												<label for="form-field-name" class="elementor-field-label">
-								Nome							</label>
-														<input size="1" type="text" name="form_fields[name]" id="form-field-name" class="elementor-field elementor-size-sm  elementor-field-textual" required="required">
-											</div>
-								<div class="elementor-field-type-email elementor-field-group elementor-column elementor-field-group-email elementor-col-100 elementor-field-required">
-												<label for="form-field-email" class="elementor-field-label">
-								E-mail							</label>
-														<input size="1" type="email" name="form_fields[email]" id="form-field-email" class="elementor-field elementor-size-sm  elementor-field-textual" required="required">
-											</div>
-								<div class="elementor-field-type-tel elementor-field-group elementor-column elementor-field-group-message elementor-col-100 elementor-field-required">
-												<label for="form-field-message" class="elementor-field-label">
-								Celular							</label>
-								<input size="1" type="tel" name="form_fields[message]" id="form-field-message" class="elementor-field elementor-size-sm  elementor-field-textual" required="required" pattern="[0-9()#&amp;+*-=.]+" title="Only numbers and phone characters (#, -, *, etc) are accepted.">
+						<div class="elementor-field-type-text elementor-field-group elementor-column elementor-field-group-name elementor-col-100 elementor-field-required">
+									<label for="form-field-name" class="elementor-field-label">
+					Nome							</label>
+										<input size="1" type="text" name="form_fields[name]" id="form-field-name" class="elementor-field elementor-size-sm  elementor-field-textual" required="required">
+								</div>
+						<div class="elementor-field-type-email elementor-field-group elementor-column elementor-field-group-email elementor-col-100 elementor-field-required">
+									<label for="form-field-email" class="elementor-field-label">
+					E-mail							</label>
+										<input size="1" type="email" name="form_fields[email]" id="form-field-email" class="elementor-field elementor-size-sm  elementor-field-textual" required="required">
+								</div>
+						<div class="elementor-field-type-tel elementor-field-group elementor-column elementor-field-group-message elementor-col-100 elementor-field-required">
+									<label for="form-field-message" class="elementor-field-label">
+					Celular							</label>
+					<input size="1" type="tel" name="form_fields[message]" id="form-field-message" class="elementor-field elementor-size-sm  elementor-field-textual" required="required" pattern="[0-9()#&amp;+*-=.]+" title="Only numbers and phone characters (#, -, *, etc) are accepted.">
 
-						</div>
-								<div class="elementor-field-type-text">
-					<input size="1" type="text" name="form_fields[field_9eabcb9]" id="form-field-field_9eabcb9" class="elementor-field elementor-size-sm " style="display:none !important;">				</div>
-								<div class="elementor-field-group elementor-column elementor-field-type-submit elementor-col-100 e-form__buttons">
-					<button class="elementor-button elementor-size-sm" type="submit">
-						<span class="elementor-button-content-wrapper">
-																						<span class="elementor-button-text">Enviar</span>
-													</span>
-					</button>
-				</div>
+					</div>
+						<div class="elementor-field-type-text">
+				<input size="1" type="text" name="form_fields[field_9eabcb9]" id="form-field-field_9eabcb9" class="elementor-field elementor-size-sm " style="display:none !important;">			</div>
+						<div class="elementor-field-group elementor-column elementor-field-type-submit elementor-col-100 e-form__buttons">
+				<button class="elementor-button elementor-size-sm" type="submit" id="acqua-submit-btn">
+					<span class="elementor-button-content-wrapper">
+																		<span class="elementor-button-text">Enviar</span>
+									</span>
+				</button>
 			</div>
-		</form>
+		</div>
+		<div id="acqua-form-message" style="display:none; padding: 12px 16px; margin-top: 12px; border-radius: 6px; font-size: 14px; text-align: center;"></div>
+	</form>
+	<style>
+		#acqua-form-message.success { background: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+		#acqua-form-message.error { background: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+		#acqua-submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+	</style>
+	<script>
+	(function() {
+		var GOOGLE_SCRIPT_URL = 'SUA_URL_DO_GOOGLE_APPS_SCRIPT_AQUI';
+		
+		var form = document.getElementById('acqua-form');
+		if (!form) return;
+		
+		form.addEventListener('submit', function(e) {
+			e.preventDefault();
+			
+			var btn = document.getElementById('acqua-submit-btn');
+			var msgEl = document.getElementById('acqua-form-message');
+			var btnText = btn.querySelector('.elementor-button-text');
+			var originalText = btnText.textContent;
+			
+			// Honeypot check
+			var honeypot = document.getElementById('form-field-field_9eabcb9');
+			if (honeypot && honeypot.value.length > 0) return;
+			
+			// Disable button
+			btn.disabled = true;
+			btnText.textContent = 'Enviando...';
+			msgEl.style.display = 'none';
+			
+			var payload = {
+				nome: document.getElementById('form-field-name').value,
+				email: document.getElementById('form-field-email').value,
+				celular: document.getElementById('form-field-message').value,
+				honeypot: honeypot ? honeypot.value : ''
+			};
+			
+			fetch(GOOGLE_SCRIPT_URL, {
+				method: 'POST',
+				mode: 'no-cors',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(payload)
+			})
+			.then(function() {
+				msgEl.className = 'success';
+				msgEl.textContent = '✓ Mensagem enviada com sucesso! Entraremos em contato em breve.';
+				msgEl.style.display = 'block';
+				form.reset();
+			})
+			.catch(function() {
+				msgEl.className = 'error';
+				msgEl.textContent = '✗ Erro ao enviar. Por favor, tente novamente.';
+				msgEl.style.display = 'block';
+			})
+			.finally(function() {
+				btn.disabled = false;
+				btnText.textContent = originalText;
+			});
+		});
+	})();
+	</script>
 						</div>
 				<div class="elementor-element elementor-element-5d45af7 elementor-widget elementor-widget-text-editor" data-id="5d45af7" data-element_type="widget" data-widget_type="text-editor.default">
 									<p>Ao clicar em &#8220;Enviar&#8221;, você concorda com nossos Termos de Serviço e Política de Privacidade.</p>								</div>
