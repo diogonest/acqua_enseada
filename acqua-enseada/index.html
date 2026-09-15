@@ -592,33 +592,100 @@ if(typeof mutation.addedNodes[i].getElementsByClassName!=='function'){continue}
 images=mutation.addedNodes[i].getElementsByTagName('img');is_image=mutation.addedNodes[i].tagName=="IMG";iframes=mutation.addedNodes[i].getElementsByTagName('iframe');is_iframe=mutation.addedNodes[i].tagName=="IFRAME";rocket_lazy=mutation.addedNodes[i].getElementsByClassName('rocket-lazyload');image_count+=images.length;iframe_count+=iframes.length;rocketlazy_count+=rocket_lazy.length;if(is_image){image_count+=1}
 if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_count>0){lazyLoadInstance.update()}});var b=document.getElementsByTagName("body")[0];var config={childList:!0,subtree:!0};observer.observe(b,config)}},!1)</script><script data-no-minify="1" async src="../wp-content/plugins/wp-rocket/assets/js/lazyload/17.8.3/lazyload.min.js"></script><script>function lazyLoadThumb(e,alt,l){var t='<img data-lazy-src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"><noscript><img src="https://i.ytimg.com/vi/ID/hqdefault.jpg" alt="" width="480" height="360"></noscript>',a='<button class="play" aria-label="play Youtube video"></button>';if(l){t=t.replace('data-lazy-','');t=t.replace('loading="lazy"','');t=t.replace(/<noscript>.*?<\/noscript>/g,'');}t=t.replace('alt=""','alt="'+alt+'"');return t.replace("ID",e)+a}function lazyLoadYoutubeIframe(){var e=document.createElement("iframe"),t="ID?autoplay=1";t+=0===this.parentNode.dataset.query.length?"":"&"+this.parentNode.dataset.query;e.setAttribute("src",t.replace("ID",this.parentNode.dataset.src)),e.setAttribute("frameborder","0"),e.setAttribute("allowfullscreen","1"),e.setAttribute("allow","accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"),this.parentNode.parentNode.replaceChild(e,this.parentNode)}document.addEventListener("DOMContentLoaded",function(){var exclusions=[];var e,t,p,u,l,a=document.getElementsByClassName("rll-youtube-player");for(t=0;t<a.length;t++)(e=document.createElement("div")),(u='https://i.ytimg.com/vi/ID/hqdefault.jpg'),(u=u.replace('ID',a[t].dataset.id)),(l=exclusions.some(exclusion=>u.includes(exclusion))),e.setAttribute("data-id",a[t].dataset.id),e.setAttribute("data-query",a[t].dataset.query),e.setAttribute("data-src",a[t].dataset.src),(e.innerHTML=lazyLoadThumb(a[t].dataset.id,a[t].dataset.alt,l)),a[t].appendChild(e),(p=e.querySelector(".play")),(p.onclick=lazyLoadYoutubeIframe)});</script>
 <script>var rocket_beacon_data = {"ajax_url":"https:\/\/acquaenseada.com.br\/wp-admin\/admin-ajax.php","nonce":"d3238100f4","url":"https:\/\/acquaenseada.com.br","is_mobile":false,"width_threshold":1600,"height_threshold":700,"delay":500,"debug":null,"status":{"atf":true,"lrc":true},"elements":"img, video, picture, p, main, div, li, svg, section, header, span","lrc_threshold":1800}</script><script data-name="wpr-wpr-beacon" src='../wp-content/plugins/wp-rocket/assets/js/wpr-beacon.min.js' async></script><script>class RocketElementorAnimation{constructor(){this.deviceMode=document.createElement("span"),this.deviceMode.id="elementor-device-mode-wpr",this.deviceMode.setAttribute("class","elementor-screen-only"),document.body.appendChild(this.deviceMode)}_detectAnimations(){let t=getComputedStyle(this.deviceMode,":after").content.replace(/"/g,"");this.animationSettingKeys=this._listAnimationSettingsKeys(t),document.querySelectorAll(".elementor-invisible[data-settings]").forEach(t=>{const e=t.getBoundingClientRect();if(e.bottom>=0&&e.top<=window.innerHeight)try{this._animateElement(t)}catch(t){}})}_animateElement(t){const e=JSON.parse(t.dataset.settings),i=e._animation_delay||e.animation_delay||0,n=e[this.animationSettingKeys.find(t=>e[t])];if("none"===n)return void t.classList.remove("elementor-invisible");t.classList.remove(n),this.currentAnimation&&t.classList.remove(this.currentAnimation),this.currentAnimation=n;let s=setTimeout(()=>{t.classList.remove("elementor-invisible"),t.classList.add("animated",n),this._removeAnimationSettings(t,e)},i);window.addEventListener("rocket-startLoading",function(){clearTimeout(s)})}_listAnimationSettingsKeys(t="mobile"){const e=[""];switch(t){case"mobile":e.unshift("_mobile");case"tablet":e.unshift("_tablet");case"desktop":e.unshift("_desktop")}const i=[];return["animation","_animation"].forEach(t=>{e.forEach(e=>{i.push(t+e)})}),i}_removeAnimationSettings(t,e){this._listAnimationSettingsKeys().forEach(t=>delete e[t]),t.dataset.settings=JSON.stringify(e)}static run(){const t=new RocketElementorAnimation;requestAnimationFrame(t._detectAnimations.bind(t))}}document.addEventListener("DOMContentLoaded",RocketElementorAnimation.run);</script><style id="claude-enhancements-css">
-/* ===== Melhorias visuais adicionadas ===== */
-html{scroll-behavior:smooth;}
+/* Animação suave nos botões "Saiba mais" / "Conheça os detalhes" / "Fale com a gente" */
+.elementor-element-596ea85,.elementor-element-62427c6,.elementor-element-aa3d744,.elementor-element-60c35bd{
+  position:relative;overflow:hidden;
+  transition:transform .45s var(--claude-ease),box-shadow .45s var(--claude-ease);
+}
+.elementor-element-596ea85:hover,.elementor-element-62427c6:hover,.elementor-element-aa3d744:hover,.elementor-element-60c35bd:hover{
+  transform:translateY(-5px);
+  box-shadow:0 14px 30px rgba(0,20,40,.22);
+}
+.elementor-element-596ea85::after,.elementor-element-62427c6::after,.elementor-element-aa3d744::after,.elementor-element-60c35bd::after{
+  content:'';position:absolute;top:0;left:-60%;width:40%;height:100%;
+  background:linear-gradient(120deg,transparent,rgba(255,255,255,.55),transparent);
+  transform:skewX(-20deg);
+  transition:left .75s var(--claude-ease);
+  pointer-events:none;
+}
+.elementor-element-596ea85:hover::after,.elementor-element-62427c6:hover::after,.elementor-element-aa3d744:hover::after,.elementor-element-60c35bd:hover::after{
+  left:130%;
+}
+.elementor-element-596ea85 .elementor-heading-title,.elementor-element-62427c6 .elementor-heading-title,.elementor-element-aa3d744 .elementor-heading-title,.elementor-element-60c35bd .elementor-heading-title{
+  transition:letter-spacing .45s var(--claude-ease);
+}
+.elementor-element-596ea85:hover .elementor-heading-title,.elementor-element-62427c6:hover .elementor-heading-title,.elementor-element-aa3d744:hover .elementor-heading-title,.elementor-element-60c35bd:hover .elementor-heading-title{
+  letter-spacing:1.5px;
+}
+@media (prefers-reduced-motion: reduce){
+  .elementor-element-596ea85,.elementor-element-62427c6,.elementor-element-aa3d744,.elementor-element-60c35bd{transition:none;}
+  .elementor-element-596ea85::after,.elementor-element-62427c6::after,.elementor-element-aa3d744::after,.elementor-element-60c35bd::after{display:none;}
+}
 
-/* Hover nas fotos da galeria */
+/* ===== Melhorias visuais adicionadas ===== */
+:root{--claude-ease:cubic-bezier(.16,1,.3,1);--claude-ease-soft:cubic-bezier(.22,.61,.36,1);}
+
+/* Hover na galeria, mais suave e com leve brilho */
 .swiper-slide-inner{overflow:hidden;}
-.swiper-slide-image{transition:transform .5s ease;}
-.swiper-slide:hover .swiper-slide-image{transform:scale(1.08);}
+.swiper-slide-image{transition:transform 1.1s var(--claude-ease),filter .6s ease;will-change:transform;}
+.swiper-slide:hover .swiper-slide-image{transform:scale(1.09);filter:brightness(1.04);}
 
 /* Botão voltar ao topo */
-#claude-back-to-top{position:fixed;right:24px;bottom:100px;width:48px;height:48px;border-radius:50%;background:#0d2f4f;color:#fff;border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.25);opacity:0;visibility:hidden;transform:translateY(12px);transition:opacity .3s ease,transform .3s ease,visibility .3s,background .2s ease;z-index:9998;}
-#claude-back-to-top.claude-visible{opacity:1;visibility:visible;transform:translateY(0);}
-#claude-back-to-top:hover{background:#155a8a;}
+#claude-back-to-top{position:fixed;right:24px;bottom:100px;width:48px;height:48px;border-radius:50%;background:#0d2f4f;color:#fff;border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 20px rgba(13,47,79,.35);opacity:0;visibility:hidden;transform:translateY(16px) scale(.9);transition:opacity .5s var(--claude-ease),transform .5s var(--claude-ease),visibility .5s,background .25s ease,box-shadow .25s ease;z-index:9998;}
+#claude-back-to-top.claude-visible{opacity:1;visibility:visible;transform:translateY(0) scale(1);}
+#claude-back-to-top:hover{background:#155a8a;box-shadow:0 8px 26px rgba(13,47,79,.45);transform:translateY(-3px) scale(1.05);}
 #claude-back-to-top svg{width:20px;height:20px;}
 
-/* Fade-in ao rolar */
-.claude-reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
-.claude-reveal.claude-visible{opacity:1;transform:translateY(0);}
+/* Fade-in ao rolar: sobe + aparece + foca (blur -> nítido), curva suave premium */
+.claude-reveal{opacity:0;transform:translateY(42px) scale(.98);filter:blur(6px);transition:opacity 1.1s var(--claude-ease),transform 1.1s var(--claude-ease),filter 1.1s var(--claude-ease);will-change:opacity,transform,filter;}
+.claude-reveal.claude-visible{opacity:1;transform:translateY(0) scale(1);filter:blur(0);}
+
+/* Leve efeito parallax nas fotos ao entrar na tela (imagens fora do carrossel) */
+.claude-parallax-img{transition:transform 1.3s var(--claude-ease-soft);will-change:transform;}
 
 @media (prefers-reduced-motion: reduce){
   html{scroll-behavior:auto;}
-  .claude-reveal{opacity:1;transform:none;transition:none;}
+  .claude-reveal{opacity:1;transform:none;filter:none;transition:none;}
   .swiper-slide-image{transition:none;}
+  .claude-parallax-img{transition:none;}
 }
 </style>
 <script id="claude-enhancements-js">
 (function(){
-  // Botão voltar ao topo
+  /* ---------- Scroll customizado, mais suave e elegante nos links internos ---------- */
+  function easeOutExpo(t){return t===1?1:1-Math.pow(2,-10*t);}
+
+  function smoothScrollTo(targetY,duration){
+    var startY=window.scrollY;
+    var distance=targetY-startY;
+    var startTime=null;
+    function step(timestamp){
+      if(!startTime)startTime=timestamp;
+      var elapsed=timestamp-startTime;
+      var progress=Math.min(elapsed/duration,1);
+      var eased=easeOutExpo(progress);
+      window.scrollTo(0,startY+distance*eased);
+      if(progress<1){requestAnimationFrame(step);}
+    }
+    requestAnimationFrame(step);
+  }
+
+  document.querySelectorAll('a[href*="#"]').forEach(function(link){
+    link.addEventListener('click',function(e){
+      var href=link.getAttribute('href')||'';
+      var hashIdx=href.indexOf('#');
+      if(hashIdx===-1)return;
+      var hash=href.slice(hashIdx+1);
+      if(!hash)return;
+      var target=document.getElementById(hash)||document.querySelector('[name="'+hash+'"]');
+      if(!target)return;
+      e.preventDefault();
+      var targetY=target.getBoundingClientRect().top+window.scrollY-20;
+      smoothScrollTo(targetY,1200);
+    });
+  });
+
+  /* ---------- Botão voltar ao topo ---------- */
   var btn=document.createElement('button');
   btn.id='claude-back-to-top';
   btn.setAttribute('aria-label','Voltar ao topo');
@@ -631,37 +698,75 @@ html{scroll-behavior:smooth;}
   },{passive:true});
 
   btn.addEventListener('click',function(){
-    window.scrollTo({top:0,behavior:'smooth'});
+    smoothScrollTo(0,1300);
   });
 
-  // Fade-in ao rolar, aplicado nos títulos e textos das seções (fora do carrossel)
+  /* ---------- Fade-in em cascata ao rolar ---------- */
   var revealSelectors=[
     '.elementor-widget-heading .elementor-heading-title',
     '.elementor-widget-text-editor .elementor-widget-container'
   ];
-  var revealEls=document.querySelectorAll(revealSelectors.join(','));
-  revealEls.forEach(function(el){
-    if(el.closest('.swiper-slide')){return;} // nunca aplica dentro do carrossel
-    el.classList.add('claude-reveal');
-  });
+  var revealEls=Array.prototype.slice.call(document.querySelectorAll(revealSelectors.join(',')));
+  revealEls=revealEls.filter(function(el){return !el.closest('.swiper-slide');});
+  revealEls.forEach(function(el){el.classList.add('claude-reveal');});
 
   if('IntersectionObserver' in window){
+    var groups={};
     var io=new IntersectionObserver(function(entries){
       entries.forEach(function(entry){
         if(entry.isIntersecting){
-          entry.target.classList.add('claude-visible');
-          io.unobserve(entry.target);
+          var el=entry.target;
+          var parentKey=el.closest('.e-con, .elementor-widget-container')?.dataset?.claudeGroup;
+          var delay=0;
+          if(parentKey&&groups[parentKey]!==undefined){
+            delay=groups[parentKey]*90;
+            groups[parentKey]++;
+          }
+          setTimeout(function(){el.classList.add('claude-visible');},delay);
+          io.unobserve(el);
         }
       });
-    },{threshold:0.15,rootMargin:'0px 0px -40px 0px'});
-    revealEls.forEach(function(el){
-      if(el.classList.contains('claude-reveal')){io.observe(el);}
+    },{threshold:.15,rootMargin:'0px 0px -60px 0px'});
+
+    /* Agrupa elementos próximos (mesma seção) pra dar efeito cascata */
+    var groupCounter=0;
+    revealEls.forEach(function(el,idx){
+      var prev=revealEls[idx-1];
+      var sameGroup=prev&&Math.abs(el.getBoundingClientRect().top-prev.getBoundingClientRect().top)<260;
+      if(!sameGroup){groupCounter++;}
+      var key='g'+groupCounter;
+      var container=el.closest('.e-con, .elementor-widget-container')||el;
+      container.dataset.claudeGroup=key;
+      if(groups[key]===undefined){groups[key]=0;}
+      io.observe(el);
     });
   } else {
     revealEls.forEach(function(el){el.classList.add('claude-visible');});
   }
+
+  /* ---------- Leve parallax nas fotos fora do carrossel ---------- */
+  var parallaxImgs=Array.prototype.slice.call(document.querySelectorAll('.elementor-widget-image img'));
+  parallaxImgs.forEach(function(img){
+    if(img.closest('.swiper-slide'))return;
+    img.classList.add('claude-parallax-img');
+  });
+  var ticking=false;
+  function updateParallax(){
+    parallaxImgs.forEach(function(img){
+      var rect=img.getBoundingClientRect();
+      if(rect.bottom<0||rect.top>window.innerHeight)return;
+      var center=rect.top+rect.height/2-window.innerHeight/2;
+      var offset=Math.max(-14,Math.min(14,center*-0.03));
+      img.style.transform='translateY('+offset+'px)';
+    });
+    ticking=false;
+  }
+  window.addEventListener('scroll',function(){
+    if(!ticking){requestAnimationFrame(updateParallax);ticking=true;}
+  },{passive:true});
 })();
 </script>
+
 </body>
 </html>
 
