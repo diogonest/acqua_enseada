@@ -713,6 +713,23 @@ body.claude-loaded{opacity:1;}
 #claude-back-to-top:hover{background:#155a8a;box-shadow:0 8px 26px rgba(13,47,79,.45);transform:translateY(-3px) scale(1.05);}
 #claude-sticky-header .claude-sh-cta:hover{background:rgba(255,255,255,.12);border-color:#fff;}
 }
+@media (hover:none), (pointer:coarse){
+  .swiper-slide-inner{transition:transform .35s ease,box-shadow .35s ease;}
+  .swiper-slide-image{transition:transform .35s ease,filter .3s ease;}
+  .swiper-slide:active .swiper-slide-inner{transform:translateY(-4px) scale(.99);box-shadow:0 16px 28px rgba(10,30,50,.24);}
+  .swiper-slide:active .swiper-slide-image{transform:scale(1.05);filter:brightness(1.04);}
+
+  .elementor-element-596ea85,.elementor-element-62427c6,.elementor-element-aa3d744,.elementor-element-60c35bd{
+    transition:transform .2s ease,box-shadow .3s ease;
+  }
+  .elementor-element-596ea85:active,.elementor-element-62427c6:active,.elementor-element-aa3d744:active,.elementor-element-60c35bd:active{
+    transform:scale(.96);
+    box-shadow:0 6px 14px rgba(0,20,40,.2);
+  }
+
+  #claude-back-to-top:active{background:#155a8a;transform:scale(.92);}
+  #claude-sticky-header .claude-sh-cta:active{background:rgba(255,255,255,.18);}
+}
 </style>
 <script id="claude-enhancements-js">
 (function(){
