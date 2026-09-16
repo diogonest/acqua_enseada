@@ -746,6 +746,7 @@ body.claude-loaded{opacity:1;}
 }
 </style>
 <script id="claude-enhancements-js">
+(function(){
   /* ---------- Galeria: arrastar pra rolar (Pointer Events) ---------- */
   var galleryEl=document.querySelector('.elementor-element-803959d .swiper');
   if(galleryEl){
@@ -780,7 +781,6 @@ body.claude-loaded{opacity:1;}
     },true);
   }
 
-(function(){
   /* ---------- Scroll customizado, mais suave e elegante nos links internos ---------- */
   function easeOutExpo(t){return t===1?1:1-Math.pow(2,-10*t);}
 
