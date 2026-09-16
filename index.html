@@ -627,8 +627,8 @@ if(is_iframe){iframe_count+=1}}});if(image_count>0||iframe_count>0||rocketlazy_c
 
 /* Hover na galeria, mais suave e com leve brilho */
 .swiper-slide-inner{overflow:hidden;}
-.swiper-slide-image{transition:transform 1.1s var(--claude-ease),filter .6s ease;will-change:transform;}
-.swiper-slide:hover .swiper-slide-image{transform:scale(1.09);filter:brightness(1.04);}
+.swiper-slide-image{transition:transform .6s cubic-bezier(.25,.46,.45,.94),filter .5s ease;will-change:transform;}
+.swiper-slide:hover .swiper-slide-image{transform:scale(1.055);filter:brightness(1.03);}
 
 /* Botão voltar ao topo */
 #claude-back-to-top{position:fixed;right:24px;bottom:100px;width:48px;height:48px;border-radius:50%;background:#0d2f4f;color:#fff;border:none;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 6px 20px rgba(13,47,79,.35);opacity:0;visibility:hidden;transform:translateY(16px) scale(.9);transition:opacity .5s var(--claude-ease),transform .5s var(--claude-ease),visibility .5s,background .25s ease,box-shadow .25s ease;z-index:9998;}
@@ -764,7 +764,8 @@ body.claude-loaded{opacity:1;}
   /* ---------- Fade-in em cascata ao rolar ---------- */
   var revealSelectors=[
     '.elementor-widget-heading .elementor-heading-title',
-    '.elementor-widget-text-editor .elementor-widget-container'
+    '.elementor-widget-text-editor .elementor-widget-container',
+    '.elementor-icon-list-item'
   ];
   var revealEls=Array.prototype.slice.call(document.querySelectorAll(revealSelectors.join(',')));
   revealEls=revealEls.filter(function(el){return !el.closest('.swiper-slide');});
